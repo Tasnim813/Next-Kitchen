@@ -29,7 +29,7 @@ const FoodCard = ({ food }) => {
 
         {/* Buttons */}
         <div className="flex gap-3">
-          <CardButton></CardButton>
+          <CardButton food={food}></CardButton>
           <Link href={`/foods/${id}`} className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-xl transition-colors duration-200">
             View Details
           </Link>

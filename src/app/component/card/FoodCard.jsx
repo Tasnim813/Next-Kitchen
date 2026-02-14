@@ -1,17 +1,19 @@
+import Link from 'next/link';
 import React from 'react';
 
 const FoodCard = ({ food }) => {
+  const {foodImg,title,category,id}=food ||[]
   return (
     <div className="max-w-sm bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
       {/* Food Image */}
       <div className="relative h-48 w-full overflow-hidden">
         <img 
-          src={food.foodImg} 
-          alt={food.title} 
+          src={foodImg} 
+          alt={title} 
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
         />
         <span className="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-          {food.category}
+          {category}
         </span>
       </div>
 
@@ -26,9 +28,9 @@ const FoodCard = ({ food }) => {
 
         {/* Buttons */}
         <div className="flex gap-3">
-          <button className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-xl transition-colors duration-200">
+          <Link href={`/foods/${id}`} className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-xl transition-colors duration-200">
             View Details
-          </button>
+          </Link>
           <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-xl transition-colors duration-200">
             Add to Cart
           </button>

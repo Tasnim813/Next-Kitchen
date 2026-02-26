@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import CardButton from '../button/CardButton';
+import Image from 'next/image';
 
 const FoodCard = ({ food }) => {
   const {foodImg,title,category,id}=food ||[]
@@ -8,11 +9,13 @@ const FoodCard = ({ food }) => {
     <div className="max-w-sm bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
       {/* Food Image */}
       <div className="relative h-48 w-full overflow-hidden">
-        <img 
+        {/* <img 
           src={foodImg} 
           alt={title} 
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-        />
+        /> */}
+        <Image width={300} height={150} src={foodImg} 
+          alt={title} className="w-full h-full object-cover "></Image>
         <span className="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
           {category}
         </span>

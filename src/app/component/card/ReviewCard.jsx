@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Heart, Star } from 'lucide-react';
+import Image from 'next/image';
 
 // --- Skeleton Component ---
 export const ReviewSkeleton = () => (
@@ -35,11 +36,14 @@ const ReviewCard = ({ review }) => {
                 {/* Header: User Info */}
                 <div className="flex justify-between items-start mb-4">
                     <div className="flex items-center gap-3">
-                        <img 
+                        {/* <img 
                             src={review.photo} 
                             alt={review.user} 
                             className="w-12 h-12 rounded-full border border-orange-100" 
-                        />
+                        /> */}
+                        <Image width={56} height={56} src={review.photo} 
+                            alt={review.user} 
+                            className="w-12 h-12 rounded-full border border-orange-100" ></Image>
                         <div>
                             <h4 className="font-bold text-gray-800 leading-tight">{review.user}</h4>
                             <p className="text-[11px] text-gray-400">{review.email}</p>

@@ -11,6 +11,12 @@ const getFoods=async(search)=>{
     await new Promise((resolve)=>setTimeout(resolve,3000));
     return data.foods || []
 }
+
+export const metadata = {
+  title: "All Food",
+  description: "Best Fast Food in Sylhet",
+};
+
 const FoodPages = async({searchParams}) => {
     const {search= ""}=await searchParams
     const foods= await getFoods(search)

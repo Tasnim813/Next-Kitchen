@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import CartProvider from "@/context/CartProvider";
@@ -14,6 +14,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
+const poppins= Poppins({
+  weight:["400","500","700"],
+  subsets: ["latin"],
+})
 export const metadata = {
   title: "Yatun khaijan",
   description: "Best Fast Food in Sylhet",
@@ -23,7 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.className} antialiased`}
       >
         <header className="px-5 items-center py-2 flex justify-between gap-5 bg-stone-800">
           
